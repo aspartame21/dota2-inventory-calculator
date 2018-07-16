@@ -1,0 +1,37 @@
+<FirstLayout>:
+	orientation: 'vertical'
+	padding: root.width * .02, root.height * .02
+	spacing: root.padding[1]
+	font_size: '20sp'
+	logbox: logbox_text
+	Label:
+		text: 'Dota 2 Inventory calculator v0.1'
+		font_size: '30sp'
+		size_hint: 1, None
+		height: self.texture_size[1] + (2 * root.padding[1])
+	BoxLayout:
+		spacing: root.padding[0]
+		size_hint: 1, None
+		height: submit_btn.height
+		Label:
+			text: 'Type your nickname: '
+			size_hint: 1, None
+			height: self.texture_size[1] + (2 * root.padding[1])
+			font_size: root.font_size
+		TextInput:
+			id: nickname
+			multiline: False
+			text: '0x109ab'
+			size_hint: 1, None
+			font_size: root.font_size
+			height: self.font_size + (2 * root.padding[1])
+		Button:
+			id: submit_btn
+			text: 'Submit'
+			size_hint: 1, None
+			height: self.texture_size[1] + (2 * root.padding[1])
+			on_press: root.submit(nickname.text)
+	TextInput:
+		id: logbox_text
+		text: 'Enter your nickname and press the submit button\n'
+		readonly: True
